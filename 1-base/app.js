@@ -58,9 +58,28 @@ const hermanos = dom.querySelectorAll(`ul.list>li.item`);
 // console.log(padre.previousElementSibling);
 // console.log(padre.nextElementSibling);
 
-console.log(padre.parentNode);
-console.log(padre.parentElement);
+// console.log(padre.parentNode);
+// console.log(padre.parentElement);
 
+// const $card = dom.querySelector(`.card`);
+// console.log($card.classList.contains(`card`));
+
+// $card.classList.add("bg-dark");
+// // $card.classList.remove("card")
+// $card.classList.toggle("dark");
+
+// let texto = "un texto largo  <b>HTML</B>"
+// const elementos = dom.querySelector("#elementos");
+// console.log(elementos);
+// // MODIFICA EL TEXTO COMO SALE 
+// elementos.textContent = texto;
+// // resalta el texto como si ustuviera en HTML
+// elementos.innerHTML = texto; 
+
+body.style.background = "#000";
+setTimeout(() => {
+    body.style.background = "";
+}, 5000);
 
 
 
