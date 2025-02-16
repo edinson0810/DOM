@@ -101,6 +101,10 @@ const dias = [
 
   console.log(dias);
 
+  const $dias = document.querySelector("#dias");
+ 
+
+$fragmen = document.createDocumentFragment();
   dias.map( ({name,img,paragraph}) => {
     const $card = document.createElement("div");
     const $card_header = document.createElement("div");
