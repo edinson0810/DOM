@@ -42,7 +42,7 @@ const hermanos = dom.querySelectorAll(`ul.list>li.item`);
 // console.log(form);
 // console.log(documento);
 // console.log(api);
-console.log(lista);
+// console.log(lista);
 // console.log(hermanos);
 // documento.innerHTML = "que es el dom";
 // documento.innerText = " ¿que es el dom? ";
