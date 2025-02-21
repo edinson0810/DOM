@@ -90,16 +90,14 @@ array.map((item, index, array) => {
     }
 })
 
-
-
-
-
-
-
-
-
-
-
-
+// const rray = [...cards.children];
+// rray.map((item, index, rray) => {
+//     if (index % 2 === 0) {
+//         item.querySelector(`h2`).classList.toggle(`bg-error`)
+        
+//     } else{
+//         item.querySelector(`h2`).classList.toggle(`bg-white`)
+//     }
+// })
 
 
