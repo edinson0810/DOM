@@ -63,7 +63,7 @@ $card.append($card_header, $card_body);
 // se agrega de ultimo
 // $cards.insertAdjacentElement("beforeend", $card);
 
-console.log($cards.children);
+// console.log($cards.children);
 
 
 // recorrer la HTMLCollection
@@ -80,12 +80,13 @@ array.map((item, index, array) => {
     // $cards.removeChild(item);
 
     // cambiar el color a los botenes si es par o impar
+    
     if (index % 2 === 0) {
         console.log((item.querySelector("a")));
-        item.querySelector(`a`).classList.toggle(`bg-error`)
+        item.querySelector(`a.button`).classList.toggle(`bg-error`)
         
         } else {
-            item.querySelector(`a`).classList.toggle(`bg-white`)
+            item.querySelector(`a.button`).classList.toggle(`bg-white`)
        
     }
 })
@@ -98,6 +99,31 @@ array.map((item, index, array) => {
 //     } else{
 //         item.querySelector(`h2`).classList.toggle(`bg-white`)
 //     }
+
+//     // if (index === 4) {
+//     //     item.style.background = `white`
+//     // }
+
+//     // cambiar el fondo de la 5 card
+// if (index === 5) {
+//     item.classList.toggle(`bg-white`)
+//     // eliminar la 5 card
+//     // $cards.removeChild(item)
+// }
+
+
 // })
+// 
+// $cards
+// console.log($cards);
 
 
+// eliminar elementos
+console.clear();
+
+
+for (let i = array.length - i; i >= 0; i--) {
+   array[i].remove();
+    
+    
+}
