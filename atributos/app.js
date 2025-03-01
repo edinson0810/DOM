@@ -4,8 +4,8 @@ const nombre = document.getElementById(`nombre`)
 const apellido = document.querySelector(`#apellido`)
 const telefono = document.querySelector(`#telefono`)
 const documento = document.querySelector(`#documento`)
-const usuario = documento.querySelector(`#usuario`)
-const contrasena = documento.querySelector(`#contrasena`)
+const usuario = document.querySelector(`#usuario`)
+const contrasena = document.querySelector(`#contrasena`)
 const btn = document.querySelector(`button`)
 
 const ciudades = async() => {
@@ -13,17 +13,38 @@ const ciudades = async() => {
     const ciudades = await data.json();
     console.log(ciudades);
   
+    // seleccion de ciudades
+     
   const selectCiudad = document.createElement("select")
   ciudades.forEach(ciudad => {
-    const opcion = document.createElement("option");
-    opcion.value = ciudades.nombre;
+    const opcion = document.createElement("option")
+    opcion.value = ciudad.nombre
     opcion.textContent = ciudad.nombre;
     selectCiudad.append(opcion)
+    
   });
 
 
-
   formulario.append(selectCiudad)
+  
+//   // se agrega de primero en el formulario
+  formulario.insertAdjacentElement("afterbegin", selectCiudad)
+//   // se agrega antes del formulario
+//   formulario.insertAdjacentElement("beforebegin", selectCiudad);
+// // se agrega de ultimo fuera del formulario
+//   formulario.insertAdjacentElement("afterend", selectCiudad);
+ 
+const box= document.createElement("INPUT");
+box.setAttribute("type", "checkbox");
+
+
+
+
+formulario.append(box)
+
+
+
+formulario.insertAdjacentElement("beforeend", btn);
 }
 
 ciudades();
