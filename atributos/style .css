@@ -171,3 +171,18 @@ button:hover {
   background: var(--heavyMetal);
   color: var(--starship);
 }
+
+
+  .div1 {
+    display: flex;
+    background-color: white;
+    width: 90%;
+  padding: calc(var(--padding) + 4px);
+  margin: var(--margin) auto;
+  border: solid 1px var(--white);
+  border-radius: 4px;
+  outline: none;
+  font-size: 1rem;
+  color: var(--sycamore);
+    
+}
