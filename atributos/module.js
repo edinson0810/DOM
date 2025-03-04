@@ -6,6 +6,9 @@ console.log(Generos);
 
 const div = document.createElement("div")
 div.classList.add("div1")
+
+// primer lbel y radio
+
 const label = document.createElement("label")
 label.textContent = "femino"
 label.setAttribute("for", "radio1")
@@ -15,8 +18,24 @@ radio.type = "radio"
 radio.id = "radio1"
 radio.name = "opciones";
 
+// segundo label y radio
+
+// const  label1 = document.createElement("label")
+// label.textContent = "Masculino"
+// label1.setAttribute("for", "radio2")
+
+// const radio1 = document.createElement("input")
+// radio1.type= "radio"
+// radio1.id = "radio2"
+// radio1.name = "opciones"
+
 div.appendChild(label)
 div.appendChild(radio)
+// div.appendChild(label1);
+// div.appendChild(radio1)
+
+
+
 
 formulario.appendChild(div)
 

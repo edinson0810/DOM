@@ -175,6 +175,7 @@ button:hover {
 
   .div1 {
     display: flex;
+    margin: 0px;
     background-color: white;
     width: 90%;
   padding: calc(var(--padding) + 4px);
