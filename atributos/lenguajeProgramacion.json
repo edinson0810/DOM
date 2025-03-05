@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "tipo": "HTML"
+    },
+    {
+        "id": 2,
+        "tipo": "CSS"
+    },
+    {
+        "id": 3,
+        "tipo": "JAVA"
+    },
+    {
+        "id": 4,
+        "tipo": "JAVASCRIPT"
+    }
+    ]

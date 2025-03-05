@@ -1,7 +1,7 @@
  export const Generos = async () => {
     const generos = await fetch("generos.json");
     const Generos = await generos.json();
-console.log(Generos);
+
 
 
 
@@ -35,12 +35,15 @@ div.appendChild(radio)
 div.appendChild(label1);
 div.appendChild(radio1)
 
+formulario.appendChild(div)
 
+const btn = formulario.querySelector("button")
+btn.insertAdjacentElement("beforebegin", div);
 
 const div2 = document.createElement("div")
-div.classList.add("div2")
+div.classList.add("div1")
 
-// primer label y radio
+// // segundo label y radio
 
 // const label2 = document.createElement("label")
 // label.textContent = "HTML"
@@ -51,7 +54,7 @@ div.classList.add("div2")
 // checkbox.id = "checkbox"
 // checkbox.name = "opciones";
 
-// // segundo label y radio
+// // // segundo label y radio
 
 // const  label3 = document.createElement("label")
 //  label3.textContent = "CSS"
@@ -62,12 +65,13 @@ div.classList.add("div2")
 // checkbox.id = "checkbox2"
 // checkbox.name = "opciones"
 
-// div.appendChild(label2)
-// div.appendChild(checkbox)
-// div.appendChild(label3);
-// div.appendChild(checkbox1)
+// div2.appendChild(label2)
+// div2.appendChild(checkbox)
+// div2.appendChild(label3);
+// div2.appendChild(checkbox1)
 
-formulario.appendChild(div, div2)
+
+
 
 
 // const newLabel = document.createElement('label');

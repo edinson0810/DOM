@@ -1,4 +1,7 @@
 import { Generos } from "./module.js";
+import { Lenguaje } from "./lenguaje.js";
+
+
 
 const body = document.querySelector("body");
 const formulario = document.querySelector("#formulario");
@@ -37,6 +40,7 @@ const ciudades = async () => {
   const opciones = document.createDocumentFragment();
   ciudades.forEach(({ nombre, id }) => {
     const option = document.createElement("option");
+    // combo.setAttribute("requerid")
     option.textContent = nombre;
     option.value = id;
     const clon = document.importNode(option, true);
