@@ -27,6 +27,8 @@ btn.insertAdjacentElement("beforebegin", terminos);
 
 
 
+
+
 //convertir archivo json a datos primitivos JS
 const ciudades = async () => {
   const data = await fetch("data.json");

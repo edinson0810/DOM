@@ -1,29 +1,41 @@
-export async function Lenguaje(formulario) {
+export async function Lenguaje() {
     try {
         const data = await fetch(`lenguajeProgramacion.json`)
         const lenguajeData = await data.json();
-        const containerCheck = document.createElement("div")
+        console.log(lenguajeData);
+        
+        const checkboxContainer = document.createElement("div")
+       
         lenguajeData.forEach(lenguaje => {
            const $checkbox = document.createElement("input");
            $checkbox.setAttribute("type", "checkbox");
            $checkbox.setAttribute("name", "lenguaje")
            $checkbox.setAttribute("id",`lenguajes-${lenguaje.id}`)
-           $checkbox.setAttribute("value", `${lenguaje.lenguaje}`)
+           $checkbox.setAttribute("value", `${lenguaje.tipo}`)
+        //    console.log($checkbox);
+           
 
-           const labelCheck = document.createElement("label")
-           labelCheck.setAttribute("id", `lenguajes-${lenguaje.id}`)
-           labelCheck.textContent = lenguaje.lenguaje
-           labelCheck.append($checkbox, labelCheck)
-
+           const checkboxLabel = document.createElement("label")
+           checkboxLabel.setAttribute("id", `lenguaje-${lenguaje.tipo}`)
+           checkboxLabel.textContent = lenguaje.tipo
+           checkboxContainer.append(checkboxLabel, $checkbox)
+        //    console.log(checkboxLabel);
+           
+          
+           
         });
-
-const input = formulario.querySelector("#telefeno")
-input.insertAdjacentElement("beforegefin", containerCheck)
+formulario.append(checkboxContainer)
+const input = formulario.querySelector("#telefono")
+input.insertAdjacentElement("beforebegin", checkboxContainer)
     } catch (error) {
         console.log("error al cargar el JSON", error);
         
     }
+    
 }
+
+Lenguaje();
+
 
 
 // export const Lenguaje = async () => {
@@ -50,4 +62,4 @@ input.insertAdjacentElement("beforegefin", containerCheck)
 //  input.insertAdjacentElement("beforebegin", containerCheck)
 // }
 
-Lenguaje();
+// Lenguaje();
