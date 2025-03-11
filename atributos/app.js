@@ -12,22 +12,13 @@ const documento = document.querySelector("#documento");
 const usuario = document.querySelector("#usuario");
 const contrasena = document.querySelector("#contrasena");
 const btn = document.querySelector("button");
+
 const terminos = document.createElement("input");
 terminos.setAttribute("type", "checkbox");
 const Rado = document.createElement("input");
 Rado.setAttribute("type", "radio");
 btn.disabled = true;
 btn.insertAdjacentElement("beforebegin", terminos);
-
-
-
-
-
-
-
-
-
-
 
 //convertir archivo json a datos primitivos JS
 const ciudades = async () => {
@@ -170,6 +161,19 @@ terminos.addEventListener("submit", validar);
 // nombre.addEventListener(`keydown`, keydown)
 
 
+// formulario.addEventListener("Submit", function(event) {
+//  const $nombre = documento.getElementById("nombre").value.trim();
+//  event.preventDefault();
+
+// let valido = true;
+
+// if ($nombrenombre === " ") {
+//   mostrarError("el nombre no puede estar vacio", inputNombre);
+//   valido = false;
+// }
+
+
+// });
 
 
 
