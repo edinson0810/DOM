@@ -175,6 +175,89 @@ terminos.addEventListener("submit", validar);
 
 // });
 
+// Crear el formulario dinámicamente
+const form = document.createElement("form");
+form.id = "miFormulario";
+
+// Crear campo de Nombre
+const inputNombre = document.createElement("input");
+inputNombre.type = "text";
+inputNombre.placeholder = "Nombre";
+inputNombre.id = "nombre";
+form.appendChild(inputNombre);
+
+// Crear campo de Correo
+const inputCorreo = document.createElement("input");
+inputCorreo.type = "email";
+inputCorreo.placeholder = "Correo";
+inputCorreo.id = "correo";
+form.appendChild(inputCorreo);
+
+// Crear campo de Contraseña
+const inputPassword = document.createElement("input");
+inputPassword.type = "password";
+inputPassword.placeholder = "Contraseña";
+inputPassword.id = "password";
+form.appendChild(inputPassword);
+
+// Botón de envío
+const botonEnviar = document.createElement("button");
+botonEnviar.textContent = "Enviar";
+botonEnviar.type = "submit";
+form.appendChild(botonEnviar);
+
+// Agregar el formulario al cuerpo
+document.body.appendChild(form);
+
+// Capturar el evento de envío y validar
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Evitar el envío por defecto
+
+  // Obtener valores
+  const nombre = document.getElementById("nombre").value.trim();
+  const correo = document.getElementById("correo").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  // Expresión regular para validar el correo
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Limpiar mensajes previos
+  document.querySelectorAll(".error").forEach((el) => el.remove());
+
+  let valido = true;
+
+  // Validar Nombre
+  if (nombre === "") {
+    mostrarError("El nombre no puede estar vacío", inputNombre);
+    valido = false;
+  }
+
+  // Validar Correo
+  if (!emailRegex.test(correo)) {
+    mostrarError("Correo inválido", inputCorreo);
+    valido = false;
+  }
+
+  // Validar Contraseña
+  if (password.length < 6) {
+    mostrarError("La contraseña debe tener al menos 6 caracteres", inputPassword);
+    valido = false;
+  }
+
+  // Si todo es válido, mostrar mensaje
+  if (valido) {
+    alert("Formulario enviado correctamente");
+  }
+});
+
+// Función para mostrar mensajes de error
+function mostrarError(mensaje, elemento) {
+  const error = document.createElement("p");
+  error.textContent = mensaje;
+  error.style.color = "red";
+  error.classList.add("error"); // Clase para eliminar después
+  elemento.insertAdjacentElement("afterend", error);
+}
 
 
 
