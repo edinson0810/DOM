@@ -3,6 +3,7 @@ export async function Lenguaje() {
         const data = await fetch(`lenguajeProgramacion.json`)
         const lenguajeData = await data.json();
         console.log(lenguajeData);
+                
         
         const checkboxContainer = document.createElement("div")
        
