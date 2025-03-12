@@ -1,34 +1,61 @@
-const dom = document;
 
-const is_valid = (event, formulario) => {
+/**
+ * 
+ * @param {*} event 
+ * @param {*} formularioId 
+ * @returns 
+ */
+export const is_valid = (event, formularioId) => {
     event.preventDefault();
-    const lista = dom.querySelector(formulario);
-    console.log(lista.children);
 
-    for (const child of lista.children) {
-        if (child.tagName == "SELECT") {
-            // console.log(child.tagName);
-            // console.log(child.atributes);
-            for(const name of child.getAttributeNames()){
+    const form = document.querySelector(formularioId); // Obtiene el formulario correctamente
+    
+    if (!form) {
+        console.error("Formulario no encontrado:", formularioId);
+        return;
+    }
+
+    
+    for (const child of form.children) {        
+        if (child.tagName === "SELECT") { 
+            console.log(child);
+            
+            for (const name of child.getAttributeNames()) {
                 const value = child.dataset.required;
-                if(name === "data-required" && value === "true") {
-                    // console.log(name, value, child);
-                    
-                    if ( child.selectedIndex == 0) {
-                        child.classList.add("error");
+                console.log(value);                
+                if (name === 'data-required' && value === "true") {
+                    if (child.selectedIndex == 0) {
+                        child.classList.add('error');
                     } else {
-                        child.classList.remove("error")
+                        child.classList.remove('error');
                     }
                 }
             }
-            
-            
+        }
+        if (child.tagName === "INPUT") { 
+            child.setAttribute('data-required', 'true')
+            if (child.hasAttribute("data-required") && child.dataset.required === "true") {
+                if (child.value.trim() === "") { // Verifica si el input está vacío
+                    child.classList.add('error');
+                } else {
+                    child.classList.remove('error');
+                }
+            }
+        }
+        if (nombre.value == "") {
+            alert("El nombre es obligatorio");
+            nombre.focus();
+            return;
         }
         
+
+        
     }
-    return bandera;    
+    let bandera = true;
+    return bandera;
 }
-export default is_valid;
+
+
 
 
 
